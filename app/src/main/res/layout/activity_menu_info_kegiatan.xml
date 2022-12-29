@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFFFF"    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/act"
+                    android:layout_width="19dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/arrow"
+                    android:gravity="left"
+                    android:textAllCaps="false"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="304dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="Info Kegiatan"
+                    android:textAllCaps="false"
+                    android:textColor="#0F172A"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/border3"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_date"
+                    style="?android:spinnerStyle"
+                    android:layout_width="362dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="Pilih tanggal"
+                    android:paddingStart="18dp"
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingTop="12dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/card"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/matkul1"
+                        android:layout_width="295dp"
+                        android:layout_height="36dp"
+                        android:gravity="left"
+                        android:text="Kuliah Umum SIIO 2020"
+                        android:textColor="#1C1C1C"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="362dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:text="Sistem Manajemen Rantai Pasok dalam Industri Otomotif dan Toyota Production system"
+                        android:textColor="#DE555555"
+                        android:textSize="12dp" />
+
+                    <TextView
+
+                        android:layout_width="195dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="left"
+                        android:text="2022-09-28 09:33:00"
+                        android:textColor="#DE555555"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

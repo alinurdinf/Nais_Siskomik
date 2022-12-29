@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FBFBFD"    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/act"
+                    android:layout_width="19dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/arrow"
+                    android:gravity="left"
+                    android:textAllCaps="false"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="304dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="Pembayaran"
+                    android:textAllCaps="false"
+                    android:textColor="#0F172A"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="91dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border3"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="362dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sm1"
+                            android:layout_width="295dp"
+                            android:layout_height="24dp"
+                            android:gravity="left"
+                            android:text="Pembayaran Semester 1"
+                            android:textColor="#1C1C1C"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/kode1"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/check"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/waktu1"
+                            android:layout_width="195dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="2021-08-25 11:33:00"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/keterangan"
+                            android:layout_width="123dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:text="Tervalidasi"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dwP1"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Download bukti bayar"
+                        android:textColor="#4C6FFF"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="91dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border3"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="362dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sm2"
+                            android:layout_width="295dp"
+                            android:layout_height="24dp"
+                            android:gravity="left"
+                            android:text="Pembayaran Semester 2"
+                            android:textColor="#1C1C1C"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/kode2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/check"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/waktu2"
+                            android:layout_width="195dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="2022-02-25 12:33:00"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/keterangan2"
+                            android:layout_width="123dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:text="Tervalidasi"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dwP2"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Download bukti bayar"
+                        android:textColor="#4C6FFF"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="91dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border3"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="362dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sm3"
+                            android:layout_width="295dp"
+                            android:layout_height="24dp"
+                            android:gravity="left"
+                            android:text="Pembayaran Semester 3"
+                            android:textColor="#1C1C1C"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/kode3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/check"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/waktu3"
+                            android:layout_width="195dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="2022-02-25 12:33:00"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/keterangan3"
+                            android:layout_width="123dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:text="Tervalidasi"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dwP3"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Download bukti bayar"
+                        android:textColor="#4C6FFF"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="91dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border3"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="362dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sm4"
+                            android:layout_width="295dp"
+                            android:layout_height="24dp"
+                            android:gravity="left"
+                            android:text="Pembayaran Semester 4"
+                            android:textColor="#1C1C1C"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/kode4"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/check"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/waktu4"
+                            android:layout_width="195dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="2022-02-25 12:33:00"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/keterangan4"
+                            android:layout_width="123dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:text="Tervalidasi"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dwP4"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Download bukti bayar"
+                        android:textColor="#4C6FFF"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="91dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border3"
+                android:backgroundTint="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="362dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sm5"
+                            android:layout_width="295dp"
+                            android:layout_height="24dp"
+                            android:gravity="left"
+                            android:text="Pembayaran Semester 5"
+                            android:textColor="#1C1C1C"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/kode5"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/check"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/waktu5"
+                            android:layout_width="195dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="left"
+                            android:text="2022-02-25 12:33:00"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/keterangan5"
+                            android:layout_width="123dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="right"
+                            android:text="Tervalidasi"
+                            android:textColor="#DE555555"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dwP5"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:layout_marginTop="5dp"
+                        android:text="Download bukti bayar"
+                        android:textColor="#4C6FFF"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/upPby"
+                android:layout_width="353dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:text="Upload Pembayaran"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

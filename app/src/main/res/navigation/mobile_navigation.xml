@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.railway.Fraghome"
+        android:label="title_home"
+        tools:layout="@layout/fragment_fraghome" />
+
+    <fragment
+        android:id="@+id/navigation_ticket"
+        android:name="com.example.railway.Fragicket"
+        android:label="Ticket"
+        tools:layout="@layout/fragment_fragicket" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.railway.Fragprofile"
+        android:label="title_notifications"
+        tools:layout="@layout/fragment_fragprofile" />
+</navigation>

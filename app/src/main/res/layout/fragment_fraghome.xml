@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootRL"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/wall_home"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="384dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="94dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nama_mahasiswa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/myPict"
+                android:layout_width="79dp"
+                android:layout_height="63dp"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/upstream" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/card"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total SKS : 88"
+
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3,88" />
+
+                <TextView
+                    android:id="@+id/program_studi"
+                    android:layout_width="140dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/borderprodi"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#47B241" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IP Kumulatif" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="320dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/jadwal"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="28dp"
+                android:background="@drawable/videos" />
+
+            <TextView
+                android:id="@+id/grafikips"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+
+                android:background="@drawable/grafik" />
+
+            <TextView
+                android:id="@+id/nilai"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/nilai" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pembayaran"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="28dp"
+                android:background="@drawable/pembayaran" />
+
+            <TextView
+                android:id="@+id/materi"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+
+                android:background="@drawable/materi" />
+
+            <TextView
+                android:id="@+id/absensi"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/absensi" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="28dp"
+                android:background="@drawable/kuisioner" />
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/info" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FBFBFD">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/back"
+                    android:layout_width="19dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/arrow"
+                    android:gravity="left"
+                    android:textAllCaps="false"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="304dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="Pembayaran"
+                    android:textAllCaps="false"
+                    android:textColor="#0F172A"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="152dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border3"
+                android:backgroundTint="#F4F4F4"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/upPb1"
+                        android:layout_width="79dp"
+                        android:layout_height="79dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/upload"
+                        android:gravity="center"
+                        android:textColor="#B4B4B4"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/upPb2"
+                        android:layout_width="318dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Upload your files here"
+                        android:textColor="#B4B4B4"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Nama"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:id="@+id/fillEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:background="#F4F4F4"
+                    android:hint="Ali Nurdin Firmansyah"
+                    android:paddingStart="25dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/fillPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Tanggal Bayar"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#F4F4F4"
+                    android:hint="26 September 2022, 03:00"
+                    android:paddingStart="25dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/upPby"
+                android:layout_width="353dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="210dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded"
+                android:gravity="center"
+                android:text="Upload Pembayaran"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"
+                android:textAllCaps="false"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

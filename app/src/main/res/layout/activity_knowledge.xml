@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".KnowledgeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/act"
+            android:layout_width="19dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/arrow"
+            android:gravity="left"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Knowledge"
+            android:textAllCaps="false"
+            android:textColor="#0F172A"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="321.25dp"
+            android:layout_height="240.76dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/people" />
+
+        <TextView
+            android:id="@+id/fillEmail"
+            android:layout_width="71dp"
+            android:layout_height="31dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border"
+            android:backgroundTint="#4C6FFF"
+            android:gravity="center"
+            android:text="New"
+            android:textColor="#fff"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/nama_matkul"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:text="Manajemen Proyek Sistem Informasi"
+            android:textColor="#DE000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nama_dosen"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:text="Febry P J Sibuea"
+            android:textColor="#A6000000"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:text="Deskripsi"
+            android:textColor="#DE000000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/isi_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas quisque vitae eleifend sed a. In rhoncus porta amet volutpat faucibus venenatis. Mollis sit et tellus, placerat tincidunt. "
+            android:textColor="#838383"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_deadline"
+            android:layout_width="134dp"
+            android:layout_height="24dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border"
+            android:backgroundTint="#F4F6F9"
+            android:gravity="center"
+            android:text="08.00 | 29 September 2022"
+            android:textColor="#595959"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/upPby"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/rounded_knowledge"
+            android:gravity="center"
+            android:text="Selesai"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
