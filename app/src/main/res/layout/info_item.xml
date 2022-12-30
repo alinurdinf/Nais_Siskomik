@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingTop="12dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+
+            android:gravity="left"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/matkul1"
+                android:layout_width="295dp"
+                android:layout_height="36dp"
+                android:gravity="left"
+                android:text="Kuliah Umum SIIO 2020"
+                android:textColor="#1C1C1C"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:text="Sistem Manajemen Rantai Pasok dalam Industri Otomotif dan Toyota Production system"
+                android:textColor="#DE555555"
+                android:textSize="12dp" />
+
+            <TextView
+
+                android:layout_width="195dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="left"
+                android:text="2022-09-28 09:33:00"
+                android:textColor="#DE555555"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
