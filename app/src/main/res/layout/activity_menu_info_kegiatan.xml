@@ -77,15 +77,14 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:divider="@null"
+                android:dividerHeight="0dp"
                 tools:listitem="@layout/info_item" >
 
             </androidx.recyclerview.widget.RecyclerView>
