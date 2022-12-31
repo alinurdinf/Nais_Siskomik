@@ -11,10 +11,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.railway.databinding.FragmentFragicketBinding;
 import com.example.railway.databinding.FragmentFragprofileBinding;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,6 +73,7 @@ public class Fragprofile extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_fragprofile, container, false);
 
+        ImageView imageView = (ImageView) rootview.findViewById(R.id.myPict);
         TextView nama_mahasiswa = (TextView) rootview.findViewById(R.id.nama_mahasiswa);
         TextView nim = (TextView) rootview.findViewById(R.id.nim);
         TextView logout = (TextView) rootview.findViewById(R.id.logout);
@@ -80,7 +83,10 @@ public class Fragprofile extends Fragment {
 
         nama_mahasiswa.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading username"));
         nim.setText(sharedPreferences.getString("nim", "Error loading nim"));
-
+        Picasso.get()
+                .load(sharedPreferences.getString("foto", "eror"))
+                .fit().centerCrop()
+                .into(imageView);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

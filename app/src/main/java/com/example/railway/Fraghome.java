@@ -14,9 +14,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.railway.databinding.FragmentFraghomeBinding;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,6 +77,7 @@ public class Fraghome extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_fraghome, container, false);
 
+        ImageView imageView = (ImageView) rootview.findViewById(R.id.myPict);
         TextView jadwal = (TextView) rootview.findViewById(R.id.jadwal);
         TextView nilai = (TextView) rootview.findViewById(R.id.nilai);
         TextView grafik = (TextView) rootview.findViewById(R.id.grafikips);
@@ -89,9 +92,16 @@ public class Fraghome extends Fragment {
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
+
         nama_mahasiwa.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading Nama Mahasiswa"));
         username.setText(sharedPreferences.getString("nim", "Error loading username"));
         program_studi.setText(sharedPreferences.getString("program_studi", "Error loading Program Studi"));
+
+        Picasso.get()
+                        .load(sharedPreferences.getString("foto", "eror"))
+                .fit().centerCrop()
+                                        .into(imageView);
+
         jadwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
