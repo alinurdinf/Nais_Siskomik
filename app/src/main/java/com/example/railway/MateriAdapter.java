@@ -1,6 +1,7 @@
 package com.example.railway;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -16,9 +17,11 @@ import java.util.List;
 
 public class MateriAdapter extends RecyclerView.Adapter<MateriAdapter.viewholder> {
     private List<MateriModel.Result> results = new ArrayList<>();
-    public MateriAdapter(List<MateriModel.Result> results){
-        this.results = results;
+    private OnClickLister listener;
 
+    public MateriAdapter(List<MateriModel.Result> results, OnClickLister listener){
+        this.results = results;
+        this.listener = listener;
     }
 
     @NonNull
@@ -36,12 +39,14 @@ public class MateriAdapter extends RecyclerView.Adapter<MateriAdapter.viewholder
         holder.title.setText(result.getJudul_materi());
         holder.dosen.setText(result.getNama_dosen());
         holder.id.setText(result.getId());
-        final String url = result.getMateri();
-        holder.link.setOnClickListener(view -> {
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            result.startActivity(i);
+        holder.link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            listener.OnClick(result);
+            }
         });
+
+
 
 
     }
@@ -73,6 +78,10 @@ public class MateriAdapter extends RecyclerView.Adapter<MateriAdapter.viewholder
         results.addAll(data);
         notifyDataSetChanged();
 
+    }
+
+    interface OnClickLister{
+        void OnClick(MateriModel.Result result);
     }
 }
 

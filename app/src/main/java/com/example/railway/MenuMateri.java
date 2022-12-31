@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.railway.rerofit.ApiService;
 
@@ -37,7 +40,16 @@ public class MenuMateri extends AppCompatActivity {
     }
 
     private void setupRecyleview() {
-        materiAdapter = new MateriAdapter(results);
+        materiAdapter = new MateriAdapter(results, new MateriAdapter.OnClickLister() {
+            @Override
+            public void OnClick(MateriModel.Result result) {
+                String url = result.getMateri();
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+
+            }
+        });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(materiAdapter);
