@@ -107,9 +107,10 @@
                 <ImageView
                     android:id="@+id/foto_berita"
                     android:layout_width="320dp"
-                    android:layout_height="240dp"
+                    android:layout_height="144dp"
                     android:layout_marginTop="18dp"
-                    android:background="@drawable/news" />
+                    android:src="@drawable/news"
+                     />
 
                 <TextView
                     android:id="@+id/isi_berita"

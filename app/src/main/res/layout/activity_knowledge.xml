@@ -28,7 +28,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="40dp"
             android:gravity="center"
-            android:text="Knowledge"
+            android:text="Tugas"
             android:textAllCaps="false"
             android:textColor="#0F172A"
             android:textSize="16dp"
