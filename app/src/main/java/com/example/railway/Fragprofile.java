@@ -4,6 +4,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -77,16 +78,31 @@ public class Fragprofile extends Fragment {
         TextView nama_mahasiswa = (TextView) rootview.findViewById(R.id.nama_mahasiswa);
         TextView nim = (TextView) rootview.findViewById(R.id.nim);
         TextView logout = (TextView) rootview.findViewById(R.id.logout);
+        TextView privacy = (TextView) rootview.findViewById(R.id.privacy1);
+
 
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
         nama_mahasiswa.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading username"));
         nim.setText(sharedPreferences.getString("nim", "Error loading nim"));
+
+        privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://foul-kitchen-315.notion.site/Nais-Siskomik-040e8844abb8433499a89681fe87e233";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+
+            }
+        });
+
         Picasso.get()
                 .load(sharedPreferences.getString("foto", "eror"))
                 .fit().centerCrop()
                 .into(imageView);
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

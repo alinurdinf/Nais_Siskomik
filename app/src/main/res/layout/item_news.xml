@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    >
+
+    <LinearLayout
+        android:layout_width="369dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border3"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="69dp"
+                    android:layout_height="69dp"
+                    android:background="@drawable/news" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="231dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/penulis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingEnd="8dp"
+                                android:text="Robert Fox"
+                                android:textColor="#595959"
+                                android:textSize="12dp" />
+
+                            <ImageView
+                                android:id="@+id/pemisah"
+                                android:layout_width="4dp"
+                                android:layout_height="4dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/circle"
+                                android:backgroundTint="#595959" />
+
+                            <TextView
+                                android:id="@+id/tgl_rilis"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:text="8h"
+                                android:textColor="#595959"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        android:textStyle="bold"
+                        android:text="A Foundation Programme For University and Beyond"
+                        android:textColor="#303030"
+                        android:textSize="12dp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        />
+</FrameLayout>

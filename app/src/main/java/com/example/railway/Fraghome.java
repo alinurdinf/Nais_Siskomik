@@ -4,21 +4,34 @@ import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.railway.databinding.FragmentFraghomeBinding;
+import com.example.railway.rerofit.ApiService;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +43,14 @@ public class Fraghome extends Fragment {
     FragmentFraghomeBinding binding;
     SharedPreferences sharedPreferences ;
     SharedPreferences.Editor editor;
+    private final String TAG = "Fraghome";
+
+    private RecyclerView recyclerView;
+    private ProgressBar progressBar;
+    private NewsAdapter newsAdapter;
+
+    private List<NewsModel.Result> results = new ArrayList<>();
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -88,9 +109,13 @@ public class Fraghome extends Fragment {
         TextView username = (TextView) rootview.findViewById(R.id.username);
         TextView pembayaran = (TextView) rootview.findViewById(R.id.pembayaran);
         TextView program_studi = (TextView) rootview.findViewById(R.id.program_studi);
+        TextView kuisioner = (TextView) rootview.findViewById(R.id.kuesioner);
 
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
+
+        recyclerView = (RecyclerView) rootview.findViewById(R.id.recycleview);
+        progressBar = (ProgressBar) rootview.findViewById(R.id.progressBar);
 
 
         nama_mahasiwa.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading Nama Mahasiswa"));
@@ -151,6 +176,54 @@ public class Fraghome extends Fragment {
                 view.getContext().startActivity(intent);
             }
         });
+
+        kuisioner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "https://tally.so/r/3la4M6";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+
+            }
+        });
+
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        newsAdapter = new NewsAdapter(results);
+        recyclerView.setAdapter(newsAdapter);
+
+        getDataFromApi();
+
         return rootview;
+    }
+
+//    private void setupRecyleview() {
+//        newsAdapter = new NewsAdapter(results);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(NewsAdapter);
+//    }
+
+    private void getDataFromApi(){
+        progressBar.setVisibility(View.VISIBLE);
+        ApiService.endpoint().getNews()
+                .enqueue(new Callback<NewsModel>() {
+                    @Override
+                    public void onResponse(Call<NewsModel> call, Response<NewsModel> response) {
+                        progressBar.setVisibility((View.GONE));
+                        if (response.isSuccessful()){
+                            List<NewsModel.Result> results = response.body().getResult();
+                            Log.d(TAG, results.toString());
+                            newsAdapter.setData(results);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<NewsModel> call, Throwable t) {
+                        Log.d(TAG, t.toString());
+                    }
+                });
     }
 }

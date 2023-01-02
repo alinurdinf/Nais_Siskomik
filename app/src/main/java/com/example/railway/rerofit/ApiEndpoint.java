@@ -2,6 +2,7 @@ package com.example.railway.rerofit;
 
 import com.example.railway.KegiatanModel;
 import com.example.railway.MateriModel;
+import com.example.railway.NewsModel;
 import com.example.railway.NilaiModel;
 
 import okhttp3.RequestBody;
@@ -17,6 +18,9 @@ public interface ApiEndpoint {
 
     @GET("Materi.php")
     Call<MateriModel> getMateri();
+
+    @GET("News.php")
+    Call<NewsModel> getNews();
 
     @POST("nilai.php")
     Call<NilaiModel> getNilai(@Body RequestBody request);
