@@ -190,7 +190,6 @@
                         android:id="@+id/materi"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-
                         android:background="@drawable/materi" />
 
                     <TextView
@@ -221,6 +220,21 @@
                         android:layout_height="120dp"
                         android:background="@drawable/info" />
                 </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/news_scroll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:fillViewport="true"
+                    android:measureAllChildren="false"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="369dp"
@@ -254,7 +268,7 @@
                 </LinearLayout>
 
                 <ScrollView
-                    android:id="@+id/news_scroll"
+                    android:id="@+id/allnews_scroll"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -280,6 +294,8 @@
                     tools:listitem="@layout/item_news">
 
                 </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+                </ScrollView>
                 </LinearLayout>
                 </ScrollView>
 
