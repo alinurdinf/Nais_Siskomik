@@ -71,7 +71,7 @@ public class Fragicket extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_fragicket, container, false);
 
-        TextView username = (TextView) rootview.findViewById(R.id.username);
+        TextView username = (TextView) rootview.findViewById(R.id.nama_mahasiswa);
 
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
