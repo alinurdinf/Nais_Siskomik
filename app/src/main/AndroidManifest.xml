@@ -7,13 +7,19 @@
 
     <application
         android:allowBackup="true"
+        android:configChanges="orientation|screenSize"
         android:icon="@drawable/ic_logo"
         android:label="Nais"
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
-        android:configChanges="orientation|screenSize"
-
         android:theme="@style/Theme.Railway">
+        <activity
+            android:name=".MenuBerita"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".menu_up_pembayaran"
             android:exported="false">

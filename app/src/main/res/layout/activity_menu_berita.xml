@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".KnowledgeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/act"
+            android:layout_width="19dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/arrow"
+            android:gravity="left"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:layout_width="304dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Berita"
+            android:textAllCaps="false"
+            android:textColor="#0F172A"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tanggal_rilis"
+                    android:layout_width="320dp"
+                    android:layout_height="match_parent"
+                    android:text="Selasa, 25 Oktober 2022"
+                    android:textColor="#838383"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/judul_berita"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginTop="28dp"
+                    android:text="A Foundation Programme For University and Beyond"
+                    android:textColor="#303030"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/nama_penulis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:text="Robert Fox"
+                        android:textColor="#595959"
+                        android:textSize="12dp" />
+
+                    <ImageView
+                        android:id="@+id/pemisah"
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/circle"
+                        android:backgroundTint="#595959"/>
+
+                    <TextView
+                        android:id="@+id/jam_rilis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8h Ago"
+                        android:paddingStart="8dp"
+                        android:textColor="#595959"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/foto_berita"
+                    android:layout_width="320dp"
+                    android:layout_height="240dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/news" />
+
+                <TextView
+                    android:id="@+id/isi_berita"
+                    android:layout_width="320dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="28dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique egestas lorem accumsan id in massa. Tincidunt feugiat facilisis aliquam sed mattis consequat dignissim enim. Sagittis lectus purus quisque felis scelerisque eget. Sed viverra cursus sollicitudin sed sagittis vulputate. Nunc, tempor convallis malesuada tincidunt. Tristique ornare interdum praesent montes, nisl nulla aliquam ultricies urna. Diam donec in at congue mattis. Volutpat sit diam imperdiet pretium. Tristique justo viverra elementum lorem tristique arcu adipiscing tempor. Eget facilisis nulla massa pharetra turpis. Sapien mi pretium sit sem vitae mauris faucibus nulla. Amet diam consequat, morbi quis fusce suspendisse."
+                    android:textColor="#DE000000"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
