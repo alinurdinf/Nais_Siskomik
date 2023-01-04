@@ -132,32 +132,19 @@
                 android:text="IP Kumulatif" />
 
         </LinearLayout>
-    </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/news_scroll"
-        android:layout_width="408dp"
-        android:layout_height="432dp"
-        android:layout_alignParentTop="true"
-        android:fillViewport="true"
-        android:measureAllChildren="false"
-        android:scrollbars="none"
-        tools:layout_editor_absoluteY="299dp"
-        tools:ignore="MissingConstraints">
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="300dp"
                 android:orientation="vertical">
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -175,6 +162,7 @@
                         android:id="@+id/grafikips"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
+
                         android:background="@drawable/grafik" />
 
                     <TextView
@@ -182,6 +170,7 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:background="@drawable/nilai" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -208,7 +197,9 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:background="@drawable/absensi" />
+
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -230,12 +221,26 @@
                         android:background="@drawable/info" />
                 </LinearLayout>
 
+                <ScrollView
+                    android:id="@+id/news_scroll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:fillViewport="true"
+                    android:measureAllChildren="false"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="369dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="40dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -262,6 +267,21 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <ScrollView
+                    android:id="@+id/allnews_scroll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:fillViewport="true"
+                    android:measureAllChildren="false"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleview"
                     android:layout_width="match_parent"
@@ -274,9 +294,12 @@
                     tools:listitem="@layout/item_news">
 
                 </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+                </ScrollView>
+                </LinearLayout>
+                </ScrollView>
+
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

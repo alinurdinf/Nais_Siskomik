@@ -81,6 +81,7 @@ public class Fragprofile extends Fragment {
         TextView privacy = (TextView) rootview.findViewById(R.id.privacy1);
 
 
+
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 

@@ -4,6 +4,8 @@ import com.example.railway.KegiatanModel;
 import com.example.railway.MateriModel;
 import com.example.railway.NewsModel;
 import com.example.railway.NilaiModel;
+import com.example.railway.Result;
+import com.example.railway.ResultTugas;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -21,6 +23,9 @@ public interface ApiEndpoint {
     @GET("News.php")
     Call<NewsModel> getNews();
 
-    @POST("nilai.php")
-    Call<NilaiModel> getNilai(@Body RequestBody request);
+    @POST("Nilai.php")
+    Call<Result> getData(@Body RequestBody body);
+
+    @POST("Tugas.php")
+    Call<ResultTugas> getTugas(@Body RequestBody body);
 }

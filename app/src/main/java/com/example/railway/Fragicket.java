@@ -1,5 +1,6 @@
 package com.example.railway;
 
+import static android.content.ContentValues.TAG;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Intent;
@@ -7,14 +8,30 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.railway.databinding.FragmentFraghomeBinding;
 import com.example.railway.databinding.FragmentFragicketBinding;
+import com.example.railway.rerofit.ApiEndpoint;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +42,9 @@ public class Fragicket extends Fragment {
     FragmentFragicketBinding binding;
     SharedPreferences sharedPreferences ;
     SharedPreferences.Editor editor;
+    private RecyclerView recyclerView;
+    private TugasAdapter adapter;
+    private List<DataTugas> dataList;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,17 +95,72 @@ public class Fragicket extends Fragment {
 
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
+        recyclerView = rootview.findViewById(R.id.recycleview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
 
         username.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading username"));
 
-        TextView tv_matkul = (TextView) rootview.findViewById(R.id.tv_matkul);
-        tv_matkul.setOnClickListener(new View.OnClickListener() {
+//        TextView tv_matkul = (TextView) rootview.findViewById(R.id.tv_matkul);
+//        tv_matkul.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), KnowledgeActivity.class);
+//                view.getContext().startActivity(intent);
+//            }
+//        });
+
+        dataList = new ArrayList<>();
+
+        // create the adapter with the data list
+        adapter = new TugasAdapter(dataList);
+        // set the adapter on the recycler view
+        recyclerView.setAdapter(adapter);
+
+        getData();
+
+        TextView see = (TextView) rootview.findViewById(R.id.seeAll);
+        see.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), KnowledgeActivity.class);
+                Intent intent = new Intent(view.getContext(), Tugas.class);
                 view.getContext().startActivity(intent);
             }
         });
         return rootview;
+    }
+
+    private void getData() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://nice.galariks.my.id/Nice_API/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        // create the api interface
+        ApiEndpoint apiInterface = retrofit.create(ApiEndpoint.class);
+        sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        String nim = sharedPreferences.getString("nim", "eror");
+        RequestBody body = new FormBody.Builder()
+                .add("nim", nim)
+                .build();
+
+        Call<ResultTugas> call = apiInterface.getTugas(body);
+        call.enqueue(new Callback<ResultTugas>() {
+            @Override
+            public void onResponse(Call<ResultTugas> call, Response<ResultTugas> response) {
+                // parse the response and update the UI
+                ResultTugas result = response.body();
+                List<DataTugas> data = result.getResult();
+                dataList.addAll(data);
+                adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onFailure(Call<ResultTugas> call, Throwable t) {
+                Log.e(TAG, "On Failure: "+t.getMessage());
+            }
+        });
     }
 }

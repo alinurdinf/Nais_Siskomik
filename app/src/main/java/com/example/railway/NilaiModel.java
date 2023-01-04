@@ -1,9 +1,25 @@
 package com.example.railway;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class NilaiModel {
     private List<NilaiModel.Result> result;
+    @SerializedName("nim")
+    private String nim;
+
+    public NilaiModel(String nim, String nilaiBody) {
+
+    }
+
+    public String getNim() {
+        return nim;
+    }
+
+    public void setNim(String nim) {
+        this.nim = nim;
+    }
 
     public List<NilaiModel.Result> getResult() {
         return result;
@@ -66,5 +82,6 @@ public class NilaiModel {
                     ", sks='" + sks + '\'' +
                     '}';
         }
+
     }
 }

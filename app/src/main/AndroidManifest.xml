@@ -14,6 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Railway">
         <activity
+            android:name=".Tugas"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MenuBerita"
             android:exported="false">
             <meta-data
