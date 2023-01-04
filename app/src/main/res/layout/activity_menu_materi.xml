@@ -16,14 +16,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -163,22 +162,34 @@
                         android:textSize="12dp" />
 
                 </LinearLayout>
-
             </LinearLayout>
+            </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="519dp"
+        android:scrollbars="none"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteY="212dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="18dp"
                 android:divider="@null"
                 android:dividerHeight="0dp"
-                tools:listitem="@layout/item_materi" >
+                tools:listitem="@layout/item_materi">
 
             </androidx.recyclerview.widget.RecyclerView>
-
         </LinearLayout>
     </ScrollView>
 
