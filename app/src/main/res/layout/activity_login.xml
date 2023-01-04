@@ -94,12 +94,19 @@
 
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
         <Button
             android:id="@+id/masuk"
             android:layout_width="353dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="320dp"
             android:background="@drawable/rounded"
             android:gravity="center"
             android:text="Sign In"
@@ -108,11 +115,6 @@
             android:textAllCaps="false"
             android:textSize="16dp" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

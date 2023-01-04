@@ -45,6 +45,9 @@ public class Fragicket extends Fragment {
     private RecyclerView recyclerView;
     private TugasAdapter adapter;
     private List<DataTugas> dataList;
+
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -97,6 +100,7 @@ public class Fragicket extends Fragment {
         editor = sharedPreferences.edit();
         recyclerView = rootview.findViewById(R.id.recycleview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
+
 
         username.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading username"));
 

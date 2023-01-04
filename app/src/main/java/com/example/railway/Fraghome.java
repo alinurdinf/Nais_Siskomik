@@ -180,10 +180,12 @@ public class Fraghome extends Fragment {
         kuisioner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://tally.so/r/3la4M6";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
+                Intent intent = new Intent(view.getContext(), Kuisioner.class);
+                view.getContext().startActivity(intent);
+//                String url = "https://tally.so/r/3la4M6";
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(url));
+//                startActivity(intent);
 
             }
         });
