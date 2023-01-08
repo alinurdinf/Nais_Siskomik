@@ -5,8 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.StyleSpan;
 import android.util.Log;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.railway.rerofit.ApiEndpoint;
@@ -30,6 +35,9 @@ public class MenuJadwal extends AppCompatActivity {
     private RecyclerView recyclerView;
     private JadwalAdapter adapter;
     private List<DataJadwal> dataList;
+    private SearchView searchView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,13 +45,41 @@ public class MenuJadwal extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycleview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        searchView = findViewById(R.id.searchview);
         dataList = new ArrayList<>();
+        List<DataJadwal> filter = new ArrayList<>();
+
 
         // create the adapter with the data list
         adapter = new JadwalAdapter(dataList);
         // set the adapter on the recycler view
         recyclerView.setAdapter(adapter);
+
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Clear the filter list
+                filter.clear();
+                // Iterate through the dataList and add items that match the search query to the filter list
+                for (DataJadwal data : dataList) {
+                    if (data.getNama_matakuliah().toLowerCase().contains(newText.toLowerCase())) {
+                        filter.add(data);
+                    }
+                }
+                // Set the filter list as the data source for the adapter
+                adapter.setDataList(filter);
+                // Notify the adapter that the data has changed
+                adapter.notifyDataSetChanged();
+                return true;
+            }
+
+        });
 
         getData();
     }

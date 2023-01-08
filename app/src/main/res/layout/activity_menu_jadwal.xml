@@ -40,7 +40,17 @@
             android:text="Jadwal"
             android:textColor="#0F172A"
             android:textSize="18sp" />
+
     </LinearLayout>
+
+    <SearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        android:background="@drawable/card"
+        />
 
     <HorizontalScrollView
         android:id="@+id/hsv"
@@ -123,12 +133,12 @@
         android:id="@+id/recycleview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
         android:layout_marginLeft="18dp"
+        android:layout_marginTop="0dp"
         android:layout_marginRight="18dp"
         android:divider="@null"
         android:dividerHeight="0dp"
-        tools:listitem="@layout/item_jadwal" >
+        tools:listitem="@layout/item_jadwal">
 
     </androidx.recyclerview.widget.RecyclerView>
 

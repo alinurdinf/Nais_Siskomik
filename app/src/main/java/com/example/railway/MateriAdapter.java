@@ -33,6 +33,18 @@ public class MateriAdapter extends RecyclerView.Adapter<MateriAdapter.viewholder
         );
     }
 
+    public void filterResults(CharSequence query) {
+        query = query.toString().toLowerCase();
+
+        final List<MateriModel.Result> filteredResults = new ArrayList<>();
+        for (MateriModel.Result result : results) {
+            final String text = result.getJudul_materi().toLowerCase();
+            if (text.contains(query)) {
+                filteredResults.add(result);
+            }
+        }
+        setData(filteredResults);
+    }
     @Override
     public void onBindViewHolder(@NonNull MateriAdapter.viewholder holder, int position) {
         MateriModel.Result result = results.get(position);

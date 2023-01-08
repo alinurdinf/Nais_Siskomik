@@ -17,6 +17,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         this.dataList = dataList;
     }
 
+    public void setDataList(List<Data> dataList) {
+        this.dataList = dataList;
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

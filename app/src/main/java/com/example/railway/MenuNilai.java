@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.railway.rerofit.ApiEndpoint;
@@ -37,6 +38,7 @@ public class MenuNilai extends AppCompatActivity {
     private RecyclerView recyclerView;
     private DataAdapter adapter;
     private List<Data> dataList;
+    private SearchView searchView;
 
     private String nim;
     @Override
@@ -45,7 +47,9 @@ public class MenuNilai extends AppCompatActivity {
         setContentView(R.layout.activity_menu_nilai);
         recyclerView = findViewById(R.id.recycleview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        searchView = findViewById(R.id.search);
 
+        List<Data> filter = new ArrayList<>();
         dataList = new ArrayList<>();
 
         // create the adapter with the data list
@@ -53,6 +57,31 @@ public class MenuNilai extends AppCompatActivity {
         // set the adapter on the recycler view
         recyclerView.setAdapter(adapter);
 
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Clear the filter list
+                filter.clear();
+                // Iterate through the dataList and add items that match the search query to the filter list
+                for (Data data : dataList) {
+                    if (data.getNamaMatakuliah().toLowerCase().contains(newText.toLowerCase())) {
+                        filter.add(data);
+                    }
+                }
+                // Set the filter list as the data source for the adapter
+                adapter.setDataList(filter);
+                // Notify the adapter that the data has changed
+                adapter.notifyDataSetChanged();
+                return true;
+            }
+
+        });
 getData();
 
     }
