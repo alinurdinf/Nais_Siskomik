@@ -135,7 +135,7 @@ public class Fragicket extends Fragment {
 
     private void getData() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://nice.galariks.my.id/Nice_API/")
+                .baseUrl("https://nice.galariks.my.id/Nice_API/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

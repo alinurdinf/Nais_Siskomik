@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
-    private static String BASE_URL = "http://nice.galariks.my.id/Nice_API/";
+    private static String BASE_URL = "https://nice.galariks.my.id/Nice_API/";
     private static Retrofit retrofit;
     public static ApiEndpoint endpoint(){
         Retrofit retrofit = new Retrofit.Builder()

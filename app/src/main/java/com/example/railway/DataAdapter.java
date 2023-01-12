@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
@@ -43,12 +44,47 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         return dataList.size();
     }
 
+    public void semester1(String semester) {
+        List<Data> filteredData = new ArrayList<>();
+        for (Data data : dataList) {
+            if (data.getSemester().contains(semester)) {
+                filteredData.add(data);
+            }
+        }
+        dataList = filteredData;
+        notifyDataSetChanged();
+    }
+
+    public void semester2(String semester) {
+        List<Data> filteredData = new ArrayList<>();
+        for (Data data : dataList) {
+            if (data.getSemester().contains(semester)) {
+                filteredData.add(data);
+            }
+        }
+        dataList = filteredData;
+        notifyDataSetChanged();
+    }
+
+    public void semester3(String semester) {
+        List<Data> filteredData = new ArrayList<>();
+        for (Data data : dataList) {
+            if (data.getSemester().contains(semester)) {
+                filteredData.add(data);
+            }
+        }
+        dataList = filteredData;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView nim;
         TextView nama_matakuliah;
         TextView semester;
         TextView nilai;
         TextView sks;
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);

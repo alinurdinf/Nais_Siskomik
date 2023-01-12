@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -39,6 +41,7 @@ public class MenuNilai extends AppCompatActivity {
     private DataAdapter adapter;
     private List<Data> dataList;
     private SearchView searchView;
+    private Button semester1, semester2, semester3;
 
     private String nim;
     @Override
@@ -82,12 +85,41 @@ public class MenuNilai extends AppCompatActivity {
             }
 
         });
+
+        int originalColor;
+        semester1 = findViewById(R.id.semester1);
+        semester1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.semester1("Semester 1");
+//                semester1.setBackgroundColor(getResources().getColor(R.color.black));
+//                semester1.setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+        semester2 = findViewById(R.id.semester2);
+        semester2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.semester2("Semester 2");
+//                semester1.setBackgroundColor(getResources().getColor(R.color.black));
+//                semester1.setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+        semester3 = findViewById(R.id.semester3);
+        semester3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.semester3("Semester 3");
+//                semester1.setBackgroundColor(getResources().getColor(R.color.black));
+//                semester1.setTextColor(getResources().getColor(R.color.white));
+            }
+        });
 getData();
 
     }
     public void getData(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://nice.galariks.my.id/Nice_API/")
+                .baseUrl("https://nice.galariks.my.id/Nice_API/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

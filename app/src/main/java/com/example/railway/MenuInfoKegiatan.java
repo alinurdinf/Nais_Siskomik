@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.railway.rerofit.ApiService;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -60,11 +61,18 @@ public class MenuInfoKegiatan extends AppCompatActivity implements DatePickerDia
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDateString = dateFormat.format(c.getTime());
 
         Button button = (Button) findViewById(R.id.bt_date);
         button.setText(currentDateString);
+
+        // Filter the results in the adapter using the selected date
+        kegiatanAdapter.filterResults(currentDateString);
     }
+
+
     private void setupRecyleview() {
         kegiatanAdapter = new KegiatanAdapter(results);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);

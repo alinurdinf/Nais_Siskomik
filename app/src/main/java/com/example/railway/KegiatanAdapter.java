@@ -8,8 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class KegiatanAdapter extends RecyclerView.Adapter<KegiatanAdapter.viewholder> {
 
@@ -38,6 +41,20 @@ public class KegiatanAdapter extends RecyclerView.Adapter<KegiatanAdapter.viewho
     public int getItemCount() {
         return results.size();
     }
+
+    public void filterResults(String query) {
+        // Convert the query to a LocalDate object
+        LocalDate date = LocalDate.parse(query, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+        // Filter the list of results to only include those that have a matching date
+        List<KegiatanModel.Result> filteredResults = results.stream()
+                .filter(result -> LocalDate.parse(result.getTgl_kegiatan(), DateTimeFormatter.ofPattern("yyyy-MM-dd")).equals(date))
+                .collect(Collectors.toList());
+
+        // Update the list of results in the adapter
+        setData(filteredResults);
+    }
+
 
     public class viewholder extends RecyclerView.ViewHolder {
         TextView title, desc, tanggal;
