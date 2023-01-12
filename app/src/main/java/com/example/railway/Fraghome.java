@@ -110,6 +110,7 @@ public class Fraghome extends Fragment {
         TextView pembayaran = (TextView) rootview.findViewById(R.id.pembayaran);
         TextView program_studi = (TextView) rootview.findViewById(R.id.program_studi);
         TextView kuisioner = (TextView) rootview.findViewById(R.id.kuesioner);
+        TextView ipk = (TextView) rootview.findViewById(R.id.ipk);
 
         sharedPreferences = getActivity().getSharedPreferences("LoginFile", MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -117,7 +118,7 @@ public class Fraghome extends Fragment {
         recyclerView = (RecyclerView) rootview.findViewById(R.id.recycleview);
         progressBar = (ProgressBar) rootview.findViewById(R.id.progressBar);
 
-
+        ipk.setText(sharedPreferences.getString("ips", "Eror"));
         nama_mahasiwa.setText(sharedPreferences.getString("nama_mahasiswa", "Error loading Nama Mahasiswa"));
         username.setText(sharedPreferences.getString("nim", "Error loading username"));
         program_studi.setText(sharedPreferences.getString("program_studi", "Error loading Program Studi"));

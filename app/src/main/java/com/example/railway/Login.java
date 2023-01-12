@@ -134,6 +134,8 @@ public class Login extends AppCompatActivity {
                             editor.putString("username",jsonObject.getString("username"));
                             editor.putString("foto",jsonObject.getString("foto"));
                             editor.putString("nilai",jsonObject.getString("nilai"));
+                            editor.putString("ips",jsonObject.getString("ips"));
+                            editor.putString("ipk",jsonObject.getString("ipk"));
 
 
                             while (!editor.commit())
